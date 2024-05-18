@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <script></script>
+    <meta charset="UTF-8">
+    <meta content="width=device-with, initial-scale=1.0" nama="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Paket - Tugas Nurani Sya'dyah P12</title>
+    <meta content name="description">
+    <meta content name="keywords">
+    <!-- Favicons-->
+    <link href="img/log.png" rel="icon">
+    <link href=""img/srf.jpg" rel=""appel-touch-icon">
+         <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1ff8d4;
+        }
+        header {
+            background-color: #1ff8d4;
+            color: rgb(13, 6, 6);
+            padding: 10px 0;
+            text-align: center;
+            position: relative;
+        }
+        .logo-container {
+            position: absolute;
+            left: 20px;
+            top: 10px;
+        }
+        .logo-container img {
+            height: 60px; /* Logo diperbesar menjadi 60px */
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #200b7b;
+        }
+        nav a {
+            color: rgb(253, 254, 254);
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: #2ca6e4;
+            color: black;
+        }
+        .container {
+            padding: 20px;
+        }
+        .product {
+            border: 1px solid #cccccc;
+            padding: 16px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .product h2 {
+            margin-top: 0;
+        }
+        form {
+            border: 1px solid #28c1ec;
+            padding: 16px;
+            border-radius: 8px;
+            max-width: 500px;
+            margin: auto;
+        }
+        form div {
+            margin-bottom: 12px;
+        }
+        label {
+            display: block;
+            margin-bottom: 6px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .order-button {
+            background-color: #2809f6;
+            color: rgb(247, 250, 250);
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 4px;
+            display: block;
+            text-align: center;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .order-button:hover {
+            background-color: #19a3f8;
+        }
+    </style>
+    <script>
+        function orderNow() {
+            var name = document.getElementById("name").value;
+            var product = document.getElementById("product").value;
+            var phone = document.getElementById("phone").value;
+            var address = document.getElementById("address").value;
+            var payment = document.getElementById("payment").value;
+            
+            var message = "Halo, saya ingin memesan:\n\n" +
+                          "Nama: " + name + "\n" +
+                          "Produk: " + product + "\n" +
+                          "No. WA: " + phone + "\n" +
+                          "Alamat: " + address + "\n" +
+                          "Metode Bayar: " + payment;
+            
+            var whatsappURL = "https://api.whatsapp.com/send?phone=6289502567788&text=" + encodeURIComponent(message);
+            
+            window.open(whatsappURL, '_blank');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <class="logo-container">
+            <a href="#home"><img src="img/log.png" alt="Logo"></a>
+        <div class="contact-info">
+            <h1>Website Pemesanan Obat Herbal</h1>
+            <p>Hubungi kami: <strong>+6289502567788</strong></p>
+            <p>Email: <strong>mzstore@gmail.com</strong></p>
+        </div>
+    </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">Tentang Kami</a>
+        <a href="#products">Produk</a>
+        <a href="#order">Pemesanan</a>
+        <a href="#testimoni">Testimoni</a>
+    </nav>
+    <div class="container" id="home">
+        <h2>Selamat Datang di Website Pemesanan Obat Herbal</h2>
+        <p>Kami menyediakan obat herbal berkualitas tinggi untuk mengobati penyakit Asam Urat Anda.</p>
+    </div>
+    <div class="container" id="about">
+        <h2>Tentang Kami</h2>
+        <p>Kami adalah toko obat herbal yang berdedikasi untuk menyediakan produk alami yang aman dan efektif.</p>
+    </div>
+    <div class="container" id="products">
+        <h2>Produk Kami</h2>
+        <div class="product">
+            <img src="img/srf.jpg" alt="Obat Herbal Sarafinz"style="display: block; margin: 0 auto; max-width: 50%;">
+            <h3>Obat Herbal Sarafinz</h3>
+            <p>Sarafinz adalah herbal yang diformulasikan untuk penderita Asam Urat yang telah terbukti berkhasiat, dibuat dengan bahan alami oleh ahli herbal serta telah teruji klinis dan berizin BPOM.</p>
+        </div>
+        <!-- Tambahkan produk lainnya sesuai kebutuhan -->
+    </div>
+    <div class="container" id="order">
+        <h2>Pemesanan</h2>
+        <form onsubmit="orderNow(); return false;">
+            <div>
+                <label for="name">Nama:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="product">Pilih Paket:</label>
+                <select id="product" name="product" required>
+                    <option value="Paket 1">1 botol Rp.129.000</option>
+                    <option value="Paket 2">2 botol Rp.229.000</option>
+                    <!-- Tambahkan opsi produk lainnya sesuai kebutuhan -->
+                </select>
+            </div>
+            <div>
+                <label for="phone">No. WA:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div>
+                <label for="address">Alamat:</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            <div>
+                <label for="payment">Metode Bayar:</label>
+                <select id="payment" name="payment" required>
+                    <option value="Transfer Bank">Transfer Bank</option>
+                    <option value="COD">COD (Cash on Delivery)</option>
+                    <!-- Tambahkan opsi metode bayar lainnya sesuai kebutuhan -->
+                </select>
+            </div>
+            <div class="container" id="order">
+                <h2>Pemesanan</h2>
+                <p>Untuk pemesanan, Anda bisa menghubungi kami melalui WhatsApp dengan mengklik tombol di bawah ini:</p>
+                <a href="https://api.whatsapp.com/send?phone=6281234567890&text=Halo,%20saya%20ingin%20memesan%20obat%20herbal" class="order-button">Pesan via WhatsApp</a>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="container" id="testimoni">
+    <h2>Testimoni</h2>
+        <div class="testimonial">
+            <img src="IMG/Testimoni-1.jpg" alt="Testimoni 1"style="display: block; margin: 0 auto; max-width: 75%;">
+        </div>
+        <div class="testimonial">
+            <img src="IMG/Testimoni-2.jpg" alt="Testimoni 2"style="display: block; margin: 0 auto; max-width: 75%;">
+        </div>
+        <div class="testimonial">
+            <img src="IMG/Testimoni-3.png" alt="Testimoni 3"style="display: block; margin: 0 auto; max-width: 75%;">
+        </div>
+        <div class="testimonial">
+            <img src="IMG/Assets-sarafinz.png" alt="Testimoni 3"style="display: block; margin: 0 auto; max-width: 100%;">
+        </div>
+    </div>
+</body>
+</html>
